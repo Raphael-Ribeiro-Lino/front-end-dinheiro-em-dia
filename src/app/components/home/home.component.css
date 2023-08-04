@@ -1,0 +1,267 @@
+header, nav, footer, nav, main, section{
+    display: flex;
+}
+
+header{
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--cor-header);
+    flex: 1 1 100vw;
+    height: 100px;
+}
+
+header img{
+    flex: 0 1 50px;
+    height: 50px;
+    margin-left: 5%;
+}
+
+nav{
+    flex: 1 1 100vw;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+nav a{
+    margin: 5%;
+    font-size: 1.5em;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    font-family: var(--fonte-titulo);
+}
+
+a:hover{
+    text-decoration: underline;
+    color: var(--cor-textos);
+    transition: all .3s;
+}
+
+main{
+    flex: 20 1 100vw;
+    flex-wrap: wrap;
+}
+
+section{
+    min-height: 100vh;
+    flex: 1 1 100vw;
+    justify-content: space-between;
+}
+
+.introduction{
+    background-image: linear-gradient(to bottom, var(--cor-header), var(--cor-fundo), white);
+}
+
+.card{
+    display: grid;
+    border-radius: 20px;
+    max-width: 40%;
+    text-align: center;
+    margin: 3%;
+    padding: 20px;
+    background-color: #cef2e12a;
+    box-shadow: 1px 1px 3px 2px #0b4f6c33;
+}
+
+
+.card h1{
+    font-family: var(--fonte-titulo);
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--cor-textos);
+    margin-bottom: 10px;
+}
+
+.card .slogan{
+    font-size: 1.5rem;
+    font-family: var(--fonte-subtitulo);
+    color: #0E8132;
+}
+
+.card p{
+    font-family: var(--fonte-texto);
+    color: var(--cor-textos);
+    font-size: 1.2rem;
+    line-height: 2rem;
+    margin-bottom: 10px;
+}
+
+.card img{
+    width: 50%;
+    align-self: end;
+    margin: auto;
+}
+
+.image-money{
+    width: 60%;
+    margin: 3%;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.image-money h1{
+    font-family: var(--fonte-titulo);
+    margin-bottom: 5%;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--cor-textos);
+}
+
+.image-money img{
+    width: 100%;
+}
+
+.principal{
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 3%;
+}
+
+.principal h1{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-family: var(--fonte-titulo);
+    font-size: 3rem;
+    color: var(--cor-textos);
+}
+
+.differentials{
+    max-width: 30%;
+    max-height: 50%;
+    background-image: radial-gradient(circle,#CEF2E1, white);
+    border: 1px solid #0FD15D;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+    text-align: center;
+    transition: .35s;
+    cursor: pointer;
+}
+
+.principal:hover > :not(:hover){
+    transform: scale(0.9);
+}
+
+.differentials h2{
+    font-family: var(--fonte-subtitulo);
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+    color: var(--cor-textos);
+}
+
+.differentials p{
+    font-family: var(--fonte-texto);
+    font-size: 1.2rem;
+    line-height: 2rem;
+    color: var(--cor-textos);
+}
+
+.finalization{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    margin: 3%;
+    color: var(--cor-textos);
+}
+
+.finalization h1{
+    font-family: var(--fonte-titulo);
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.finalization p{
+    font-size: 1.2rem;
+    font-family: var(--fonte-subtitulo);
+    line-height: 50px;
+}
+
+.finalization > div{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.finalization > div > img{
+    width: 50%;
+}
+
+footer{
+    flex: 20 1 100vw;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: #45BF86;
+}
+
+footer > p{
+    color: white;
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    nav a{
+        font-size: 1.2rem;
+    }
+
+    .introduction{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card{
+        max-width: 80%;
+    }
+
+    .card h1{
+        font-size: 2rem;
+    }
+
+    .card img{
+        width: 80%;
+    }
+
+    .image-money{
+        width: 80%;
+    }
+
+    .image-money h1{
+        font-size: 1.5rem;
+    }
+
+    .principal h1{
+        font-size: 2rem;
+    }
+
+    .differentials {
+        max-width: 80%;
+    }
+
+    .finalization h1{
+        font-size: 2rem;
+    }
+
+    .finalization p{
+        font-size: 1rem;
+        line-height: 30px;
+    }
+
+    .finalization > div > img{
+        width: 80%;
+    }
+
+    footer > p{
+        font-size: 1.2rem;
+    }
+}

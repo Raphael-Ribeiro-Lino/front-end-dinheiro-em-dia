@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Roboto&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --cor-header: #45BF86;
+    --cor-footer: #0B4F6C;
+    --cor-fundo: #CEF2E1;
+    --cor-textos: #0B4F6C;
+    --fonte-titulo: "Roboto", Arial, sans-serif;
+    --fonte-subtitulo: "Montserrat", Arial, sans-serif;
+    --fonte-texto: "Lato", Arial, sans-serif;
+}
+
+body{
+    background-color: white;
+    min-height: max-content;
+    display: flex;
+    flex: 1 1 100vw;
+    flex-wrap: wrap;
+}
