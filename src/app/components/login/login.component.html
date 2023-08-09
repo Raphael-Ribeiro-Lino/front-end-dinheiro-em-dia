@@ -1,0 +1,31 @@
+<main>
+    <div class="card">
+        <h1>Dinheiro Em Dia</h1>
+        <h2>Acesse sua conta</h2>
+        <div *ngIf="errorMessages.length > 0" class="error-message">
+            <div class="error" *ngFor="let errorMessage of errorMessages">{{ errorMessage }}</div>
+        </div>
+        <form [formGroup]="formLogin" (ngSubmit)="submitForm()">
+            <label for="iemail">Seu e-mail</label>
+            <input type="email" id="iemail" formControlName="email">
+            <div *ngIf="formLogin.get('email')?.invalid && formLogin.get('email')?.touched">
+                <div class="error" *ngIf="formLogin.get('email')?.hasError('required')">O e-mail é obrigatório.</div>
+                <div class="error" *ngIf="formLogin.get('email')?.hasError('maxlength')">O e-mail deve ter no máximo 320 caracteres.
+                </div>
+                <div class="error" *ngIf="formLogin.get('email')?.hasError('pattern')">Endereço de e-mail inválido.</div>
+            </div>
+            <label for="ipassword">Sua senha</label>
+            <input type="password" name="password" id="ipassword" formControlName="password">
+            <div *ngIf="formLogin.get('password')?.invalid && formLogin.get('password')?.touched">
+                <div class="error" *ngIf="formLogin.get('password')?.hasError('required')">A senha é obrigatória.</div>
+                <div class="error" *ngIf="formLogin.get('password')?.hasError('maxlength')">A senha deve ter no máximo 255 caracteres.</div>
+                <div class="error" *ngIf="formLogin.get('password')?.hasError('minlength')">A senha deve ter no mínimo 8 caracteres.</div>
+                <div class="error" *ngIf="formLogin.get('password')?.hasError('pattern')">Senha inválida.</div>
+            </div>
+            <a href="#">Esqueci minha senha</a>
+            <button type="submit" [disabled]="!formLogin.valid"  [ngStyle]="{'background-color': formLogin.valid ? '' : '#CCCCCC', 'margin-top': formLogin.valid ? '' : '5%',
+            'transition': 'background-color 0.3s, margin-top 0.3s'}">Entrar</button>
+        </form>
+        <p>Ainda não possui conta? <a routerLink="/register">Faça o cadastro!</a></p>
+    </div>
+</main>

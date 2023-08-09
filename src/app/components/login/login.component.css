@@ -1,0 +1,147 @@
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to bottom, var(--cor-header), var(--cor-fundo), white);
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    height: 550px;
+    border-radius: 30px;
+    box-shadow: 1px 1px 3px 2px #0fd15d25;
+    padding-bottom: 10px;
+}
+
+.card h1{
+    color: var(--cor-textos);
+    font-family: var(--fonte-titulo);
+    padding: 20px 0;
+}
+
+
+.card h2{
+    color: #0B9943;
+    font-family: var(--fonte-subtitulo);
+    padding-bottom: 5%;
+}
+
+form{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label{
+    color: var(--cor-textos);
+    font-family: var(--fonte-titulo);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    align-self: flex-start;
+}
+
+form input{
+    color: var(--cor-textos);
+    font-size: 1.2rem;
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 10px;
+    border: none;
+}
+
+#iemail{
+    margin-bottom: 5%;
+}
+
+#ipassword{
+    margin-bottom: 5px;
+}
+
+form input:focus{
+    outline: 1px solid #0FD15D;
+    box-shadow: 1px 1px 3px 2px #0fd15d25;
+}
+
+div .error{
+    color: red;
+    margin-bottom: 10px;
+}
+
+form a{
+    align-self: flex-start;
+    text-decoration: none;
+    font-family: var(--fonte-texto);
+    color: rgba(11, 79, 108, 0.548);
+}
+
+form a:hover{
+    color: var(--cor-header);
+    text-decoration: underline;
+}
+
+form button{
+    margin-top: 10%;
+    width: 80%;
+    height: 50px;
+    padding: 10px;
+    font-family: var(--fonte-titulo);
+    font-size: 1.2rem;
+    background-color: var(--cor-header);
+    border: none;
+    color: white;
+    border-radius: 10px;
+}
+
+form button:hover{
+    background-color: #39A774;
+}
+
+.card p{
+    font-family: var(--fonte-texto);
+    margin: 2%;
+    color: var(--cor-textos);
+}
+
+.card p a{
+    color: #0FD15D;
+}
+
+@media screen and (max-width: 600px) {
+    .card{
+        width: 90%;
+    }
+
+    form{
+        width: 90%;
+    }
+
+    form a{
+        margin-bottom: 20px;
+    }
+
+    form button{
+        width: 100%;
+    }
+
+    .card p{
+        margin: 5%;
+    }
+
+    .card p a{
+        display: block;
+        padding: 5px;
+    }
+}
+
+@media screen and (min-width: 1800px) {
+    .card{
+        height: 90%;
+    }
+}
