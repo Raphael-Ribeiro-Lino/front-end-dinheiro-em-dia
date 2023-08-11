@@ -1,1 +1,49 @@
-<p>register works!</p>
+<main>
+    <div class="card">
+        <h1><a routerLink="/">Dinheiro Em Dia</a></h1>
+        <h2>Crie sua conta</h2>
+        <div *ngIf="errorMessages.length > 0" class="error-message">
+            <div class="error" *ngFor="let errorMessage of errorMessages">{{ errorMessage }}</div>
+        </div>
+        <form [formGroup]="formRegister" (ngSubmit)="submitForm()">
+            <label for="iname">Seu nome</label>
+            <input type="text" name="name" id="iname" formControlName="name" [ngClass]="{'invalid': formRegister.get('name')?.invalid && formRegister.get('name')?.touched}">
+            <div *ngIf="formRegister.get('name')?.invalid && formRegister.get('name')?.touched">
+                <div class="error" *ngIf="formRegister.get('name')?.hasError('required')">O nome é obrigatório.</div>
+                <div class="error" *ngIf="formRegister.get('name')?.hasError('maxlength')">O nome deve ter no máximo 100 caracteres.
+                </div>
+                <div class="error" *ngIf="formRegister.get('name')?.hasError('pattern')">Nome inválido.</div>
+            </div>
+            <label for="iemail">Seu e-mail</label>
+            <input type="email" id="iemail" formControlName="email" [ngClass]="{'invalid': formRegister.get('email')?.invalid && formRegister.get('email')?.touched}">
+            <div *ngIf="formRegister.get('email')?.invalid && formRegister.get('email')?.touched">
+                <div class="error" *ngIf="formRegister.get('email')?.hasError('required')">O e-mail é obrigatório.</div>
+                <div class="error" *ngIf="formRegister.get('email')?.hasError('maxlength')">O e-mail deve ter no máximo 320 caracteres.
+                </div>
+                <div class="error" *ngIf="formRegister.get('email')?.hasError('pattern')">Endereço de e-mail inválido.</div>
+            </div>
+            <label for="ipassword">Sua senha</label>
+            <input type="password" name="password" id="ipassword" formControlName="password" [ngClass]="{'invalid': formRegister.get('password')?.invalid && formRegister.get('password')?.touched}">
+            <div *ngIf="formRegister.get('password')?.invalid && formRegister.get('password')?.touched">
+                <div class="error" *ngIf="formRegister.get('password')?.hasError('required')">A senha é obrigatória.</div>
+                <div class="error" *ngIf="formRegister.get('password')?.hasError('maxlength')">A senha deve ter no máximo 255 caracteres.</div>
+                <div class="error" *ngIf="formRegister.get('password')?.hasError('minlength')">A senha deve ter no mínimo 8 caracteres.</div>
+                <div class="error" *ngIf="formRegister.get('password')?.hasError('pattern')">Senha inválida.</div>
+            </div>
+            <label for="iRepeatPassword">Repetir senha</label>
+            <input type="password" name="repeatPassword" id="iRepeatPassword" formControlName="repeatPassword" [ngClass]="{'invalid': formRegister.get('repeatPassword')?.invalid && formRegister.get('repeatPassword')?.touched}">
+            <div *ngIf="formRegister.get('repeatPassword')?.invalid && formRegister.get('repeatPassword')?.touched">
+                <div class="error" *ngIf="formRegister.get('repeatPassword')?.hasError('required')">Repetir a senha é obrigatório.</div>
+                <div class="error" *ngIf="formRegister.get('repeatPassword')?.hasError('maxlength')">A senha deve ter no máximo 255 caracteres.</div>
+                <div class="error" *ngIf="formRegister.get('repeatPassword')?.hasError('minlength')">A senha deve ter no mínimo 8 caracteres.</div>
+                <div class="error" *ngIf="formRegister.get('repeatPassword')?.hasError('pattern')">Senha inválida.</div>
+            </div>
+            <div *ngIf="formRegister.hasError('passwordMismatch') && formRegister.get('repeatPassword')?.touched">
+                <div class="error">As senhas não coincidem.</div>
+              </div>
+            <button type="submit" [disabled]="!formRegister.valid"  [ngStyle]="{'background-color': formRegister.valid ? '' : '#CCCCCC', 'margin-top': formRegister.valid ? '' : '5%',
+            'transition': 'background-color 0.3s, margin-top 0.3s'}">Enviar</button>
+            <p>Já possui conta? <a routerLink="/login">Faça o login!</a></p>
+        </form>
+    </div>
+</main>

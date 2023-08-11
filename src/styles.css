@@ -16,6 +16,10 @@
     --fonte-texto: "Lato", Arial, sans-serif;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body{
     background-color: white;
     min-height: max-content;

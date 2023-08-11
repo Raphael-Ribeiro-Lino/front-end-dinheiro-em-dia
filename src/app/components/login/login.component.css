@@ -14,6 +14,7 @@ main{
     width: 60%;
     height: 550px;
     border-radius: 30px;
+    background-color: #cef2e12a;
     box-shadow: 1px 1px 3px 2px #0fd15d25;
     padding-bottom: 10px;
 }
@@ -24,6 +25,16 @@ main{
     padding: 20px 0;
 }
 
+.card h1 a{
+    text-decoration: none;
+    color: var(--cor-textos);
+}
+
+.card h1 a:hover{
+    color: #0B9943;
+    text-decoration: underline;
+    transition: all .3s;
+}
 
 .card h2{
     color: #0B9943;
@@ -69,9 +80,18 @@ form input:focus{
     box-shadow: 1px 1px 3px 2px #0fd15d25;
 }
 
+div .success{
+    color: green;
+    font-size: 1.5rem;
+    margin-bottom: 3%;
+    margin-right: 3%;
+    margin-left: 3%;
+}
+
 div .error{
     color: red;
     margin-bottom: 10px;
+    font-size: 1.2rem;
 }
 
 form a{
@@ -116,6 +136,10 @@ form button:hover{
 @media screen and (max-width: 600px) {
     .card{
         width: 90%;
+    }
+
+    .card h1 a{
+        text-decoration: underline;
     }
 
     form{
