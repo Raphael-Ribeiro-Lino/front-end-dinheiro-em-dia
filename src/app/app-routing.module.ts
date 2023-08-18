@@ -13,7 +13,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'home', component: HomeComponent},
   {path: 'email-redefine-password', component: EmailRedefinePasswordComponent},
-  {path: 'redefine-password', component: RedefinePasswordComponent}
+  {path: 'redefine-password/:hash', component: RedefinePasswordComponent}
 ];
 
 @NgModule({
