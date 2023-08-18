@@ -23,7 +23,7 @@
                 <div class="error" *ngIf="formLogin.get('password')?.hasError('minlength')">A senha deve ter no mínimo 8 caracteres.</div>
                 <div class="error" *ngIf="formLogin.get('password')?.hasError('pattern')">Senha inválida.</div>
             </div>
-            <a href="#">Esqueci minha senha</a>
+            <a routerLink="/email-redefine-password">Esqueci minha senha</a>
             <button type="submit" [disabled]="!formLogin.valid"  [ngStyle]="{'background-color': formLogin.valid ? '' : '#CCCCCC', 'margin-top': formLogin.valid ? '' : '5%',
             'transition': 'background-color 0.3s, margin-top 0.3s'}">Entrar</button>
         </form>

@@ -9,6 +9,8 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { RedefinePasswordComponent } from './components/redefine-password/redefine-password.component';
+import { EmailRedefinePasswordComponent } from './components/email-redefine-password/email-redefine-password.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    RedefinePasswordComponent,
+    EmailRedefinePasswordComponent
   ],
   imports: [
     BrowserModule,

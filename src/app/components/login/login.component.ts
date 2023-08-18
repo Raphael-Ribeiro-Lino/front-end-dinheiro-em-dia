@@ -35,15 +35,16 @@ export class LoginComponent implements OnInit {
     this.errorMessages = [];
     let loginInput = this.formLogin.getRawValue() as LoginInput;
 
-    this.loginService.auth(loginInput).subscribe(
-      data => {
-      this.route.navigate(["home"]);
-    },
-    error => {
-      if (error.error && error.error.message) {
-        this.errorMessages.push(error.error.message);
-      } else {
-        this.errorMessages.push('Ocorreu um erro inesperado. Tem mais tarde, por favor!');
+    this.loginService.auth(loginInput).subscribe({
+      next: (data) => {
+        this.route.navigate(["home"]);
+      },
+      error: (error) => {
+        if (error.error && error.error.message) {
+          this.errorMessages.push(error.error.message);
+        } else {
+          this.errorMessages.push('Ocorreu um erro inesperado. Tem mais tarde, por favor!');
+        }
       }
     }
     );
