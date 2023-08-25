@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
         if (error.error && error.error.message) {
           this.errorMessages.push(error.error.message);
         } else {
-          this.errorMessages.push('Ocorreu um erro inesperado. Tem mais tarde, por favor!');
+          this.errorMessages.push('Ocorreu um erro inesperado. Tente mais tarde, por favor!');
         }
       }
     }

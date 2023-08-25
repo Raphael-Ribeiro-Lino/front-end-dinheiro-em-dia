@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from "@angular/common/http";
+import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -11,6 +11,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { RedefinePasswordComponent } from './components/redefine-password/redefine-password.component';
 import { EmailRedefinePasswordComponent } from './components/email-redefine-password/email-redefine-password.component';
+import { LoadingComponent } from './components/loading/loading.component';
+import { LoadingInterceptor } from './interceptors/loading/loading.interceptor';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { EmailRedefinePasswordComponent } from './components/email-redefine-pass
     RegisterComponent,
     LandingPageComponent,
     RedefinePasswordComponent,
-    EmailRedefinePasswordComponent
+    EmailRedefinePasswordComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,13 @@ import { EmailRedefinePasswordComponent } from './components/email-redefine-pass
     HttpClientModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoadingInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

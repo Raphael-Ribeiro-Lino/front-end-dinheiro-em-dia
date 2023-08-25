@@ -54,7 +54,7 @@ export class RegisterComponent implements OnInit {
         if (erro.error && erro.error.message) {
           this.errorMessages.push(erro.error.message);
         } else {
-          this.errorMessages.push('Ocorreu um erro inesperado. Tem mais tarde, por favor!');
+          this.errorMessages.push('Ocorreu um erro inesperado. Tente mais tarde, por favor!');
         }
       }
     });

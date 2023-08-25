@@ -44,7 +44,7 @@ export class RedefinePasswordComponent implements OnInit {
           this.formRedefinePassword.get('password')?.disable();
           this.formRedefinePassword.get('repeatPassword')?.disable();
         } else {
-          this.errorMessages.push('Ocorreu um erro inesperado. Tem mais tarde, por favor!');
+          this.errorMessages.push('Ocorreu um erro inesperado. Tente mais tarde, por favor!');
         }
       }
     });
@@ -65,7 +65,7 @@ export class RedefinePasswordComponent implements OnInit {
         if (erro.error && erro.error.message) {
           this.errorMessages.push(erro.error.message);
         } else {
-          this.errorMessages.push('Ocorreu um erro inesperado. Tem mais tarde, por favor!');
+          this.errorMessages.push('Ocorreu um erro inesperado. Tente mais tarde, por favor!');
         }
       }
     });
