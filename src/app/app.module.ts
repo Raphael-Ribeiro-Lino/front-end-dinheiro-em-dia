@@ -13,6 +13,7 @@ import { RedefinePasswordComponent } from './components/redefine-password/redefi
 import { EmailRedefinePasswordComponent } from './components/email-redefine-password/email-redefine-password.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { LoadingInterceptor } from './interceptors/loading/loading.interceptor';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LoadingInterceptor } from './interceptors/loading/loading.interceptor';
     LandingPageComponent,
     RedefinePasswordComponent,
     EmailRedefinePasswordComponent,
-    LoadingComponent
+    LoadingComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
