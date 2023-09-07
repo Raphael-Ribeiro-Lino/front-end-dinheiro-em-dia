@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginInput } from 'src/app/models/login/loginInput';
 import { LoginService } from 'src/app/services/login/login.service';
 import { Router } from '@angular/router';
+import { LoginOutput } from 'src/app/models/login/loginOutput';
 
 
 @Component({
@@ -36,7 +37,8 @@ export class LoginComponent implements OnInit {
     let loginInput = this.formLogin.getRawValue() as LoginInput;
 
     this.loginService.auth(loginInput).subscribe({
-      next: (data) => {
+      next: (data: LoginOutput) => {
+        localStorage.setItem('token', data.token);
         this.route.navigate(["home"]);
       },
       error: (error) => {
