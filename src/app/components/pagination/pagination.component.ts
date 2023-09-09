@@ -19,7 +19,7 @@ export class PaginationComponent {
   }
 
   previousPage() {
-    if (this.currentPage > 1) {
+    if (this.currentPage >= 1) {
       this.pageChange.emit(this.currentPage - 1);
     }
   }

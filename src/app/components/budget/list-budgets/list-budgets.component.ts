@@ -49,10 +49,7 @@ export class ListBudgetsComponent implements OnInit{
   }
 
   changePage(newPage: number) {
-    console.log(this.currentPage);
-    console.log(newPage);
-    
-    this.currentPage = newPage - 1;
+    this.currentPage = newPage;
     this.listAll();
   }
 
