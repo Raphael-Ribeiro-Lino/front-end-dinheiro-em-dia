@@ -8,6 +8,7 @@
             <img src="../../../../assets/no-budgets.png" alt="Desenho homem fazendo orçamento">
         </div>
         <a routerLink="/budget" class="btn btn-outline-success mx-auto">Cadastrar</a>
+        <div *ngIf="successfullyRegisteredBudget != ''" class="text-center success">{{successfullyRegisteredBudget}}</div>
         <div class="row">
             <div *ngFor="let budget of budgets" class="card">
                 <h5 class="card-header text-center">Orçamento</h5>

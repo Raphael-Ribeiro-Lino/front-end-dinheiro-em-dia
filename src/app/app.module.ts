@@ -17,6 +17,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { ListBudgetsComponent } from './components/budget/list-budgets/list-budgets.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { RegisterBudgetComponent } from './components/budget/register-budget/register-budget.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     NavbarComponent,
     NotFoundPageComponent,
     ListBudgetsComponent,
-    PaginationComponent
+    PaginationComponent,
+    RegisterBudgetComponent
   ],
   imports: [
     BrowserModule,

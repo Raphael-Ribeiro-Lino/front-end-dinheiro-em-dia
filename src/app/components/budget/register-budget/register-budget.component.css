@@ -1,0 +1,127 @@
+header {
+    width: 100vw;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    border-radius: 30px;
+    box-shadow: 1px 1px 3px 2px #0fd15d25;
+    background-color: #cef2e12a;
+    padding-bottom: 10px;
+    margin: 5%;
+}
+
+.card h1{
+    color: var(--cor-textos);
+    font-family: var(--fonte-titulo);
+    padding: 20px 0;
+}
+
+.card h1:hover{
+    color: #0B9943;
+    transition: all .3s;
+}
+
+form{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label{
+    color: var(--cor-textos);
+    font-family: var(--fonte-titulo);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    align-self: flex-start;
+}
+
+div .invalid{
+    outline: 1px solid red;
+    border: none;
+}
+
+form input{
+    color: var(--cor-textos);
+    font-size: 1.2rem;
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 5%;
+    border: 1px solid springgreen;
+}
+
+form input:focus{
+    outline: 1px solid #0FD15D;
+    box-shadow: 1px 1px 3px 2px #0fd15d25;
+    border: none;
+}
+
+div .error{
+    color: red;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form button{
+    margin: 5%;
+    width: 80%;
+    height: 50px;
+    padding: 10px;
+    font-family: var(--fonte-titulo);
+    font-size: 1.2rem;
+    border: none;
+    color: white;
+    border-radius: 10px;
+}
+
+.success{
+    background-color: var(--cor-header);
+}
+
+form .success:hover{
+    background-color: #39A774;
+}
+
+@media screen and (max-width: 600px) {
+    .card{
+        width: 90%;
+    }
+
+    form{
+        width: 90%;
+    }
+
+    form button{
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1800px) {
+    .card{
+        height: 90%;
+    }
+    form label{
+        font-size: 1.5rem;
+    }
+}

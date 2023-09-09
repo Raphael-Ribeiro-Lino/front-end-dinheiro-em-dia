@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BudgetOutput } from 'src/app/models/budget/budgetOutput';
 import { BudgetService } from 'src/app/services/budget/budget.service';
 
@@ -12,6 +13,7 @@ export class ListBudgetsComponent implements OnInit{
   budgets: BudgetOutput[] = [];
 
   messageWithoutRegisteredBudgets: string = '';
+  successfullyRegisteredBudget: string = '';
   errorMessages: string[] = [];
   showErrorMessages: boolean = false;
 
@@ -19,7 +21,15 @@ export class ListBudgetsComponent implements OnInit{
   totalPages: number = 1;
 
 
-  constructor(private budgetService:BudgetService){}
+  constructor(private budgetService:BudgetService, private route: Router){
+    const currentNavigation = route.getCurrentNavigation();
+    if (currentNavigation?.extras?.state?.['successData']) {
+      this.successfullyRegisteredBudget = currentNavigation?.extras?.state?.['successData'];
+      setTimeout(() => {
+        this.successfullyRegisteredBudget = "";
+      }, 3000);
+    }
+  }
 
   ngOnInit(): void {
     this.listAll();

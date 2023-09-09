@@ -21,6 +21,12 @@ a{
     font-size: 1.2rem;
 }
 
+.success{
+    margin-top: 2%;
+    font-size: 1.2rem;
+    color: green;
+}
+
 .row{
     align-items: center;
     justify-content: center;

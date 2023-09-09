@@ -9,6 +9,7 @@ import { EmailRedefinePasswordComponent } from './components/email-redefine-pass
 import { authGuard } from './guard/auth/auth.guard';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { ListBudgetsComponent } from './components/budget/list-budgets/list-budgets.component';
+import { RegisterBudgetComponent } from './components/budget/register-budget/register-budget.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent, canActivate: [authGuard] },
   {path: 'email-redefine-password', component: EmailRedefinePasswordComponent},
   {path: 'redefine-password/:hash', component: RedefinePasswordComponent},
-  {path: 'budgets', component: ListBudgetsComponent, canActivate: [authGuard]}, 
+  {path: 'budgets', component: ListBudgetsComponent, canActivate: [authGuard]},
+  {path: 'budget', component: RegisterBudgetComponent, canActivate : [authGuard]},
   {path: '**', component: NotFoundPageComponent}, 
 ];
 

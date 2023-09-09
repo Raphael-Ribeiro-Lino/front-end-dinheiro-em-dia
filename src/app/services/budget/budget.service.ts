@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { BudgetInput } from 'src/app/models/budget/budgetInput';
 import { BudgetOutput } from 'src/app/models/budget/budgetOutput';
 import { PaginationOutput } from 'src/app/models/pagination/paginationOutput';
 import { environment } from 'src/environments/environment';
@@ -19,5 +20,12 @@ export class BudgetService {
       Authorization: `Bearer ${token}`
     });
     return this.httpClient.get<PaginationOutput<BudgetOutput>>(API_URL+`?page=${numPage}`, {headers});
+  }
+
+  register(token: String, budgetInput: BudgetInput):Observable<BudgetOutput>{
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`
+    });
+    return this.httpClient.post<BudgetOutput>(API_URL, budgetInput, {headers} )
   }
 }

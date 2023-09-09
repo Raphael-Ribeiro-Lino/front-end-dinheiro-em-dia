@@ -1,0 +1,33 @@
+<header>
+    <app-navbar></app-navbar>
+</header>
+<main>
+    <div class="card">
+        <h1>Cadastre orçamentos</h1>
+        <div *ngIf="errorMessages.length > 0" class="error-message">
+            <div class="error" *ngFor="let errorMessage of errorMessages">{{ errorMessage }}</div>
+        </div>
+        <form [formGroup]="formRegister" (ngSubmit)="submitForm()">
+            <label for="iYearMonth">Mês e ano</label>
+            <input type="text" name="yearMonth" id="iYearMonth" formControlName="yearMonth"
+                [ngClass]="{'invalid': formRegister.get('yearMonth')?.invalid && formRegister.get('yearMonth')?.touched}" placeholder="MM/AAAA">
+            <div *ngIf="formRegister.get('yearMonth')?.invalid && formRegister.get('yearMonth')?.touched">
+                <div class="error" *ngIf="formRegister.get('yearMonth')?.hasError('required')">O mês e ano é obrigatório
+                </div>
+                <div class="error" *ngIf="formRegister.get('yearMonth')?.hasError('pattern')">Data inválida</div>
+            </div>
+
+            <label for="iPlannedBudget">Orçamento planejado</label>
+            <input type="number" name="plannedBudget" id="iPlannedBudget" formControlName="plannedBudget"
+                [ngClass]="{'invalid': formRegister.get('plannedBudget')?.invalid && formRegister.get('plannedBudget')?.touched}">
+            <div *ngIf="formRegister.get('plannedBudget')?.invalid && formRegister.get('plannedBudget')?.touched">
+                <div class="error" *ngIf="formRegister.get('plannedBudget')?.hasError('required')">O orçamento planejado é obrigatório</div>
+            </div>
+            <div class="buttons">
+                <button class="success" type="submit" [disabled]="!formRegister.valid" [ngStyle]="{'background-color': formRegister.valid ? '' : '#CCCCCC', 'margin-top': formRegister.valid ? '' : '5%',
+                'transition': 'background-color 0.3s, margin-top 0.3s'}">Cadastrar</button>
+                <button routerLink="/budgets" type="button" class="btn btn-danger">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</main>
