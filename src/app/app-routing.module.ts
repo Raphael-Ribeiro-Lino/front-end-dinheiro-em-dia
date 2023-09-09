@@ -8,6 +8,7 @@ import { RedefinePasswordComponent } from './components/redefine-password/redefi
 import { EmailRedefinePasswordComponent } from './components/email-redefine-password/email-redefine-password.component';
 import { authGuard } from './guard/auth/auth.guard';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
+import { ListBudgetsComponent } from './components/budget/list-budgets/list-budgets.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent, canActivate: [authGuard] },
   {path: 'email-redefine-password', component: EmailRedefinePasswordComponent},
   {path: 'redefine-password/:hash', component: RedefinePasswordComponent},
-  {path: '**', component: NotFoundPageComponent}
+  {path: 'budgets', component: ListBudgetsComponent, canActivate: [authGuard]}, 
+  {path: '**', component: NotFoundPageComponent}, 
 ];
 
 @NgModule({

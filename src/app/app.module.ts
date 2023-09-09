@@ -15,6 +15,8 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { LoadingInterceptor } from './interceptors/loading/loading.interceptor';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
+import { ListBudgetsComponent } from './components/budget/list-budgets/list-budgets.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
     EmailRedefinePasswordComponent,
     LoadingComponent,
     NavbarComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    ListBudgetsComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
